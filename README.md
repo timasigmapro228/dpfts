@@ -30,7 +30,7 @@ DPFTS gives the assistant a Roblox-specific spine: server authority, clear place
 
 ## Installation
 
-Install this skill: github.com/[username]/dpfts
+Install this skill: github.com/timasigmapro228/dpfts
 
 ## What DPFTS Helps With
 
