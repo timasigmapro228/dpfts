@@ -1,6 +1,6 @@
 ---
 name: dpfts
-description: Use when building, reviewing, refactoring, or designing Roblox and Luau systems, especially when security, RemoteEvents, DataStores, MarketplaceService, economy, social systems, abuse prevention, UI, mobile design, performance, project structure, live ops, quests, admin commands, save slots, trading, rounds, redeem codes, pets, parties, teleports, badges, hubs, tutorials, thumbnails, retention, FTUE, or anti-AI-slop guidance matters.
+description: Use when building, reviewing, refactoring, debugging, testing, releasing, or designing Roblox and Luau systems, especially when security, RemoteEvents, DataStores, MarketplaceService, economy, social systems, abuse prevention, observability, release readiness, UI, mobile design, performance, project structure, live ops, quests, admin commands, save slots, trading, rounds, redeem codes, pets, parties, teleports, badges, bug reports, launch checklists, hubs, tutorials, thumbnails, retention, FTUE, or anti-AI-slop guidance matters.
 ---
 
 # DPFTS
@@ -37,6 +37,8 @@ When this skill is active, act like an experienced Roblox developer who wants th
 - Performance, structure, and live-ops notes when a system affects scale, updates, events, or production maintainability.
 - Economy and social-abuse notes when a system affects currency, progression, pets, parties, trading, invites, teleports, badges, or player interaction.
 - Analytics or funnel suggestions when the user asks about retention, onboarding, or "why players leave."
+- Debugging evidence, reproduction steps, and likely failure class when the user reports a bug.
+- Release-readiness checks when the user asks whether something is ready to publish.
 
 ## Priority Order
 
@@ -67,6 +69,9 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - `deep/economy.md`: currency sources, sinks, pricing, progression pacing, inflation, and monetization boundaries.
 - `deep/social-systems.md`: parties, invites, co-op loops, trading boundaries, social readability, and spam risk.
 - `deep/abuse-prevention.md`: anti-spam, admin abuse, text safety, economy abuse, and social abuse checks.
+- `deep/debugging.md`: Roblox bug triage, reproduction, script placement checks, remote debugging, and failure isolation.
+- `deep/observability.md`: logs, analytics events, release counters, and server-confirmed measurement.
+- `deep/release-readiness.md`: pre-release checks for security, data, mobile, first sessions, performance, and rollback.
 - `deep/ui.md`: Roblox UI layout, hierarchy, and safe server connections.
 - `recipes/shop.md`: server-authoritative shop system recipe.
 - `recipes/inventory.md`: server-owned inventory and equip recipe.
@@ -83,6 +88,8 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - `recipes/party-system.md`: server-owned party invite and membership recipe.
 - `recipes/teleports.md`: validated zone and cross-place teleport recipe.
 - `recipes/badges.md`: server-confirmed BadgeService award recipe.
+- `recipes/bug-report-template.md`: Roblox-specific bug report format.
+- `recipes/release-checklist.md`: practical launch checklist for small Roblox games and updates.
 - `recipes/leaderboard.md`: simple leaderstats recipe.
 
 ## When To Read Deeper Files
@@ -104,8 +111,11 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Read `deep/economy.md` before designing or reviewing currencies, pricing, rewards, sinks, shops, developer products, progression pacing, or pay-to-win risk.
 - Read `deep/social-systems.md` before designing or reviewing parties, invites, co-op, trading, social hubs, social readability, or friend play.
 - Read `deep/abuse-prevention.md` before handling spam risk, user text, admin abuse, exploit surfaces, economy farming, invite spam, or moderation-sensitive systems.
+- Read `deep/debugging.md` before diagnosing bugs, Output errors, Studio-vs-live differences, broken remotes, DataStore failures, UI failures, or performance symptoms.
+- Read `deep/observability.md` before adding logs, analytics, counters, funnel events, release measurements, or debugging instrumentation.
+- Read `deep/release-readiness.md` before advising on publish readiness, launch checklists, QA passes, rollback plans, or "safe to ship" decisions.
 - Read `deep/ui.md` before creating or reviewing Roblox UI.
-- Read recipes when the user asks for a shop, leaderboard, inventory, daily reward, quest, admin command, save slot, trading, round system, redeem code, pet, party, teleport, badge, hub, tutorial, or common Roblox system.
+- Read recipes when the user asks for a shop, leaderboard, inventory, daily reward, quest, admin command, save slot, trading, round system, redeem code, pet, party, teleport, badge, bug report, release checklist, hub, tutorial, or common Roblox system.
 
 ## Never Do This
 
@@ -123,6 +133,8 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Never let the client grant pets, party membership, teleport access, badges, or economy rewards.
 - Never design social systems that spam invites or pressure unsafe trades.
 - Never put DataStore work or expensive server logic in frame loops.
+- Never claim a Roblox system is ready to publish without checking security, data safety, mobile usability, first-session playability, and rollback risk.
+- Never debug by guessing when Output errors, script placement, reproduction steps, or server/client ownership are missing.
 - Never give exploit-friendly examples.
 
 ## Default Answer Shape
@@ -150,3 +162,28 @@ Use this shape for design advice:
 - Mobile concerns:
 - What to remove:
 - What to test:
+
+Use this shape for debugging answers:
+
+- Symptom:
+- Most likely system:
+- Evidence needed:
+- First check:
+- Likely root causes:
+- Minimal test:
+- Fix direction:
+- Regression test:
+
+Use this shape for release-readiness reviews:
+
+- Release goal:
+- Must-fix before release:
+- Security risks:
+- Data risks:
+- Mobile risks:
+- First-session risks:
+- Performance risks:
+- Economy/social risks:
+- Tests to run:
+- Rollback plan:
+- Safe to ship?:
