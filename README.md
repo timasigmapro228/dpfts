@@ -45,8 +45,9 @@ Install this skill: github.com/timasigmapro228/dpfts
 - Place, map, hub, thumbnail, and icon design.
 - Source-informed creator patterns for retention, FTUE, social readability, and live updates.
 - Testing workflows for remotes, DataStores, mobile UI, and first-session design.
+- Performance, project structure, and live-ops guidance for production-minded projects.
 - Avoiding bad AI-generated game design.
-- Recipes for common systems like shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hubs, and tutorials.
+- Recipes for common systems like shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hubs, tutorials, trading, round systems, and redeem codes.
 
 ## Repository Structure
 
@@ -67,6 +68,9 @@ dpfts/
 |   |-- creator-patterns.md
 |   |-- testing.md
 |   |-- mobile-ui.md
+|   |-- performance.md
+|   |-- project-structure.md
+|   |-- live-ops.md
 |   `-- ui.md
 `-- recipes/
     |-- shop.md
@@ -77,6 +81,9 @@ dpfts/
     |-- save-slots.md
     |-- hub-layout.md
     |-- tutorial.md
+    |-- trading.md
+    |-- round-system.md
+    |-- codes.md
     `-- leaderboard.md
 ```
 
@@ -92,6 +99,9 @@ dpfts/
 - `deep/creator-patterns.md`: source-informed Roblox creator patterns for retention, FTUE, social play, updates, and analytics.
 - `deep/testing.md`: practical test passes for remotes, DataStores, UI, first sessions, and analytics.
 - `deep/mobile-ui.md`: mobile-first UI placement, tap targets, HUDs, shops, and tutorial prompts.
+- `deep/performance.md`: practical performance rules for server heartbeat, client FPS, remotes, memory, maps, and UI.
+- `deep/project-structure.md`: Roblox folder structure, services, configs, remotes, and client/server ownership.
+- `deep/live-ops.md`: updates, events, retention hooks, analytics, rollback thinking, and player communication.
 - `deep/ui.md`: Roblox UI rules for clear, mobile-friendly interfaces.
 - `recipes/shop.md`: ready-to-use server-authoritative shop recipe.
 - `recipes/inventory.md`: server-owned inventory and equip recipe.
@@ -101,11 +111,14 @@ dpfts/
 - `recipes/save-slots.md`: simple validated DataStore save slot recipe.
 - `recipes/hub-layout.md`: practical hub layout recipe for spawn, landmarks, shops, and social areas.
 - `recipes/tutorial.md`: FTUE/tutorial recipe focused on first action, first reward, and drop-off points.
+- `recipes/trading.md`: safe server-authoritative player trading recipe.
+- `recipes/round-system.md`: lobby, intermission, match, and reward loop recipe.
+- `recipes/codes.md`: one-time redeem code recipe.
 - `recipes/leaderboard.md`: simple leaderstats leaderboard recipe.
 
-## v0.3 Scope
+## v0.4 Scope
 
-DPFTS v0.3 focuses on practical, security-first Roblox development and source-informed Roblox design guidance. It gives AI assistants clear rules and examples for common Roblox development work:
+DPFTS v0.4 focuses on practical, security-first Roblox development, source-informed Roblox design guidance, and production system patterns. It gives AI assistants clear rules and examples for common Roblox development work:
 
 - Secure client/server separation.
 - Practical Luau structure.
@@ -115,9 +128,11 @@ DPFTS v0.3 focuses on practical, security-first Roblox development and source-in
 - MarketplaceService safety for gamepasses and developer products.
 - Creator patterns for retention, core loops, FTUE, social readability, analytics, and live updates.
 - Mobile UI testing and safer layout rules.
+- Performance and project-structure guidance.
+- Live ops guidance for updates, events, retention hooks, and rollback thinking.
 - Clear UI and button guidance.
 - Useful place and map design advice.
-- Recipes for shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hub layouts, and tutorials.
+- Recipes for shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hub layouts, tutorials, trading, round systems, and redeem codes.
 
 It does not install scripts into Roblox Studio automatically. It does not replace testing in Studio. It does not make your game design good by magic. It gives the assistant better instincts.
 
@@ -141,6 +156,11 @@ After installing DPFTS, try prompts like:
 - "Use DPFTS to build a quest system that teaches the core loop."
 - "Use DPFTS to add safe admin commands without exploit-friendly remotes."
 - "Use DPFTS to design mobile UI that avoids thumbstick and jump-button zones."
+- "Use DPFTS to review my Roblox game for performance risks before I add more content."
+- "Use DPFTS to structure my Roblox project so server, client, remotes, and config are clean."
+- "Use DPFTS to design a safe player trading system without dupes."
+- "Use DPFTS to build a round-based minigame loop with server-owned rewards."
+- "Use DPFTS to add redeem codes that cannot be claimed twice."
 
 ## License
 
