@@ -1,6 +1,6 @@
 ---
 name: dpfts
-description: Use when building, reviewing, refactoring, or designing Roblox and Luau systems, especially when security, RemoteEvents, DataStores, UI, place design, maps, buttons, thumbnails, or anti-AI-slop guidance matters.
+description: Use when building, reviewing, refactoring, or designing Roblox and Luau systems, especially when security, RemoteEvents, DataStores, MarketplaceService, UI, mobile design, quests, admin commands, save slots, hubs, tutorials, thumbnails, retention, FTUE, or anti-AI-slop guidance matters.
 ---
 
 # DPFTS
@@ -21,6 +21,7 @@ When this skill is active, act like an experienced Roblox developer who wants th
 - Ask for missing context only when absolutely necessary.
 - Structure answers clearly enough that a Roblox developer can place the files in Studio.
 - Do not generate Roblox UI or maps without considering mobile readability, first 30 seconds, and visual hierarchy.
+- Do not copy top Roblox games blindly. Extract the principle: fast loop, clear goal, social readability, measurable retention, and honest presentation.
 
 ## Always Include For Code Answers
 
@@ -32,6 +33,8 @@ When this skill is active, act like an experienced Roblox developer who wants th
 - Common failure cases.
 - Security notes for any RemoteEvent or RemoteFunction.
 - MarketplaceService notes for any Robux purchase, gamepass, or developer product.
+- Mobile and first-session test steps for UI, hubs, and tutorials.
+- Analytics or funnel suggestions when the user asks about retention, onboarding, or "why players leave."
 
 ## Priority Order
 
@@ -53,10 +56,18 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - `deep/datastore.md`: DataStore safety and persistence patterns.
 - `deep/security.md`: server authority, validation, permissions, rate limits, and exploit review.
 - `deep/marketplace.md`: MarketplaceService safety for gamepasses and developer products.
+- `deep/creator-patterns.md`: source-informed creator patterns for retention, FTUE, social readability, live updates, and analytics.
+- `deep/testing.md`: practical Roblox testing workflows for remotes, DataStores, UI, first sessions, and analytics.
+- `deep/mobile-ui.md`: mobile-first UI placement, tap targets, HUDs, shops, and tutorial prompts.
 - `deep/ui.md`: Roblox UI layout, hierarchy, and safe server connections.
 - `recipes/shop.md`: server-authoritative shop system recipe.
 - `recipes/inventory.md`: server-owned inventory and equip recipe.
 - `recipes/daily-rewards.md`: server-authoritative daily reward recipe.
+- `recipes/quests.md`: server-owned quest progress and reward recipe.
+- `recipes/admin-commands.md`: allowlisted server-side admin command recipe.
+- `recipes/save-slots.md`: validated DataStore save slot recipe.
+- `recipes/hub-layout.md`: practical hub layout recipe.
+- `recipes/tutorial.md`: FTUE/tutorial recipe.
 - `recipes/leaderboard.md`: simple leaderstats recipe.
 
 ## When To Read Deeper Files
@@ -69,8 +80,11 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Read `deep/datastore.md` before creating or reviewing persistence.
 - Read `deep/security.md` before reviewing exploit risks, permissions, admin tools, rate limits, or server authority.
 - Read `deep/marketplace.md` before creating or reviewing gamepasses, developer products, Robux purchases, or purchase UI.
+- Read `deep/creator-patterns.md` before advising on retention, FTUE, core loops, social design, live updates, analytics, or how successful Roblox experiences tend to work.
+- Read `deep/testing.md` before giving completion criteria, QA plans, smoke tests, or release checks.
+- Read `deep/mobile-ui.md` before designing or reviewing mobile-heavy UI, HUDs, shops, tutorial prompts, or tap targets.
 - Read `deep/ui.md` before creating or reviewing Roblox UI.
-- Read recipes when the user asks for a shop, leaderboard, inventory, daily reward, or common Roblox system.
+- Read recipes when the user asks for a shop, leaderboard, inventory, daily reward, quest, admin command, save slot, hub, tutorial, or common Roblox system.
 
 ## Never Do This
 
@@ -82,6 +96,8 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Never use RemoteEvents without server validation.
 - Never let a LocalScript grant Robux purchase rewards.
 - Never trust a RemoteEvent that says a MarketplaceService purchase succeeded.
+- Never add admin commands without a server-side allowlist.
+- Never build a tutorial that blocks the first fun action with long dialogue.
 - Never give exploit-friendly examples.
 
 ## Default Answer Shape
