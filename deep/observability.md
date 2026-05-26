@@ -60,13 +60,24 @@ function Analytics.logFunnelStep(player: Player, funnelName: string, step: numbe
     end
 end
 
-function Analytics.logEconomySource(player: Player, currency: string, amount: number, source: string)
+-- Pass the current balance from wherever your game stores it (e.g. leaderstats or a loaded profile).
+function Analytics.logEconomySource(player: Player, currency: string, amount: number, balance: number, source: string)
     local success, err = pcall(function()
-        AnalyticsService:LogEconomyEvent(player, Enum.AnalyticsEconomyFlowType.Source, currency, amount, player:GetAttribute(currency) or 0, source)
+        AnalyticsService:LogEconomyEvent(player, Enum.AnalyticsEconomyFlowType.Source, currency, amount, balance, source)
     end)
 
     if not success then
         warn(("[Analytics] Economy source failed for %s: %s"):format(player.Name, tostring(err)))
+    end
+end
+
+function Analytics.logEconomySink(player: Player, currency: string, amount: number, balance: number, sink: string)
+    local success, err = pcall(function()
+        AnalyticsService:LogEconomyEvent(player, Enum.AnalyticsEconomyFlowType.Sink, currency, amount, balance, sink)
+    end)
+
+    if not success then
+        warn(("[Analytics] Economy sink failed for %s: %s"):format(player.Name, tostring(err)))
     end
 end
 

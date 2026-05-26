@@ -120,7 +120,7 @@ Check:
 Use clear log labels while debugging. Remove spam once the bug is fixed.
 
 ```lua
--- ServerScriptService/DebugExample.server.lua
+-- ServerScriptService/ShopService.server.lua
 local DEBUG_SHOP = true
 
 local function debugShop(message: string, data: any?)
@@ -131,10 +131,14 @@ local function debugShop(message: string, data: any?)
     print("[ShopService]", message, data or "")
 end
 
-debugShop("Buy request received", {
-    userId = player.UserId,
-    itemId = itemId,
-})
+-- Usage inside a RemoteEvent handler where player and itemId are in scope:
+buyItem.OnServerEvent:Connect(function(player, itemId)
+    debugShop("Buy request received", {
+        userId = player.UserId,
+        itemId = itemId,
+    })
+    -- validation and purchase logic here
+end)
 ```
 
 Good logs say:
