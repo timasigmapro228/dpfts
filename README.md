@@ -119,4 +119,4 @@ After installing DPFTS, try prompts like:
 
 ## License
 
-MIT
+MIT. See `LICENSE`.

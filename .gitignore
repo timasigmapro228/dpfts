@@ -1,0 +1,23 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Local tooling and dependency folders
+node_modules/
+.tools/
+
+# Roblox/Rojo generated outputs
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
+*.rbxmx.lock
+
