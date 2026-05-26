@@ -46,8 +46,9 @@ Install this skill: github.com/timasigmapro228/dpfts
 - Source-informed creator patterns for retention, FTUE, social readability, and live updates.
 - Testing workflows for remotes, DataStores, mobile UI, and first-session design.
 - Performance, project structure, and live-ops guidance for production-minded projects.
+- Economy, social systems, and abuse-prevention guidance for player-facing Roblox systems.
 - Avoiding bad AI-generated game design.
-- Recipes for common systems like shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hubs, tutorials, trading, round systems, and redeem codes.
+- Recipes for common systems like shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hubs, tutorials, trading, round systems, redeem codes, pets, parties, teleports, and badges.
 
 ## Repository Structure
 
@@ -71,6 +72,9 @@ dpfts/
 |   |-- performance.md
 |   |-- project-structure.md
 |   |-- live-ops.md
+|   |-- economy.md
+|   |-- social-systems.md
+|   |-- abuse-prevention.md
 |   `-- ui.md
 `-- recipes/
     |-- shop.md
@@ -84,6 +88,10 @@ dpfts/
     |-- trading.md
     |-- round-system.md
     |-- codes.md
+    |-- pets.md
+    |-- party-system.md
+    |-- teleports.md
+    |-- badges.md
     `-- leaderboard.md
 ```
 
@@ -102,6 +110,9 @@ dpfts/
 - `deep/performance.md`: practical performance rules for server heartbeat, client FPS, remotes, memory, maps, and UI.
 - `deep/project-structure.md`: Roblox folder structure, services, configs, remotes, and client/server ownership.
 - `deep/live-ops.md`: updates, events, retention hooks, analytics, rollback thinking, and player communication.
+- `deep/economy.md`: currencies, sources, sinks, pricing, progression pacing, and monetization boundaries.
+- `deep/social-systems.md`: parties, invites, co-op loops, trading boundaries, social readability, and spam risk.
+- `deep/abuse-prevention.md`: anti-spam, admin misuse prevention, text safety, economy abuse, and social abuse checks.
 - `deep/ui.md`: Roblox UI rules for clear, mobile-friendly interfaces.
 - `recipes/shop.md`: ready-to-use server-authoritative shop recipe.
 - `recipes/inventory.md`: server-owned inventory and equip recipe.
@@ -114,11 +125,15 @@ dpfts/
 - `recipes/trading.md`: safe server-authoritative player trading recipe.
 - `recipes/round-system.md`: lobby, intermission, match, and reward loop recipe.
 - `recipes/codes.md`: one-time redeem code recipe.
+- `recipes/pets.md`: server-owned pet ownership and equip recipe.
+- `recipes/party-system.md`: safe party invites, join/leave, and membership recipe.
+- `recipes/teleports.md`: validated zone and cross-place teleport recipe.
+- `recipes/badges.md`: BadgeService milestone award recipe.
 - `recipes/leaderboard.md`: simple leaderstats leaderboard recipe.
 
-## v0.4 Scope
+## v0.5 Scope
 
-DPFTS v0.4 focuses on practical, security-first Roblox development, source-informed Roblox design guidance, and production system patterns. It gives AI assistants clear rules and examples for common Roblox development work:
+DPFTS v0.5 focuses on practical, security-first Roblox development, source-informed Roblox design guidance, production system patterns, and social/economy systems. It gives AI assistants clear rules and examples for common Roblox development work:
 
 - Secure client/server separation.
 - Practical Luau structure.
@@ -130,9 +145,12 @@ DPFTS v0.4 focuses on practical, security-first Roblox development, source-infor
 - Mobile UI testing and safer layout rules.
 - Performance and project-structure guidance.
 - Live ops guidance for updates, events, retention hooks, and rollback thinking.
+- Economy guidance for sources, sinks, pricing, inflation, and monetization boundaries.
+- Social-system guidance for parties, invites, co-op loops, social readability, and spam risk.
+- Abuse-prevention guidance for remotes, admin tools, economy abuse, user text, and social systems.
 - Clear UI and button guidance.
 - Useful place and map design advice.
-- Recipes for shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hub layouts, tutorials, trading, round systems, and redeem codes.
+- Recipes for shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hub layouts, tutorials, trading, round systems, redeem codes, pets, parties, teleports, and badges.
 
 It does not install scripts into Roblox Studio automatically. It does not replace testing in Studio. It does not make your game design good by magic. It gives the assistant better instincts.
 
@@ -161,6 +179,11 @@ After installing DPFTS, try prompts like:
 - "Use DPFTS to design a safe player trading system without dupes."
 - "Use DPFTS to build a round-based minigame loop with server-owned rewards."
 - "Use DPFTS to add redeem codes that cannot be claimed twice."
+- "Use DPFTS to review my Roblox economy for inflation, bad sinks, and pay-to-win risk."
+- "Use DPFTS to build a server-owned pet equip system."
+- "Use DPFTS to build a party system with invite cooldowns and server-owned membership."
+- "Use DPFTS to add safe teleports between zones or places."
+- "Use DPFTS to award badges from server-confirmed milestones."
 
 ## License
 
