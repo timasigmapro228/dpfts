@@ -1,0 +1,53 @@
+# Changelog
+
+DPFTS uses practical version notes, not corporate fog. Dates are UTC release dates when the version was published on GitHub.
+
+## v1.0.0 - 2026-05-28
+
+First stable, releasable version.
+
+- Renamed the public repository target to `dpfts-roblox` for better discoverability.
+- Reworked `README.md` into a short landing page with quick start, before/after proof, focused categories, and stronger prompts.
+- Added `assets/banner.png` for a real GitHub/social preview asset.
+- Added `STRUCTURE.md`, `VERSIONING.md`, `CONTRIBUTING.md`, and issue templates.
+- Added `examples/BEFORE_AFTER.md` and `examples/PROMPTS.md`.
+- Added `deep/architecture.md` and `deep/review-checklists.md`.
+- Added `recipes/full-system-template.md` and `recipes/security-audit.md`.
+- Updated `SKILL.md` routing for full-system architecture, review checklists, security audits, and v1.0 release behavior.
+
+## v0.6 - 2026-05-26
+
+- Added debugging guidance for script placement, remotes, DataStores, UI, Studio-vs-live differences, and performance symptoms.
+- Added observability guidance for useful logs, Roblox analytics events, rejection tracking, and release counters.
+- Added release-readiness guidance for security, data safety, mobile usability, first-session playability, rollback, and launch decisions.
+- Added bug report and release checklist recipes.
+
+## v0.5 - Folded into v0.6
+
+v0.5 content was committed before v0.6 but was not published as a separate GitHub release.
+
+- Added economy guidance for sources, sinks, pricing, inflation, and monetization boundaries.
+- Added social-system guidance for parties, invites, co-op loops, social readability, and spam risk.
+- Added abuse-prevention guidance for spam, admin misuse, text safety, economy abuse, and social abuse.
+- Added recipes for pets, parties, teleports, and badges.
+
+## v0.4 - 2026-05-26
+
+- Added production-minded guidance for performance, project structure, live ops, testing, marketplace safety, and creator patterns.
+- Added recipes for inventory, daily rewards, quests, admin commands, save slots, hub layout, tutorials, trading, round systems, and redeem codes.
+
+## v0.3 - 2026-05-26
+
+- Added practical Roblox design guidance for buttons, UI, places, maps, hubs, thumbnails, icons, and anti-AI visual design.
+- Expanded README and SKILL routing for design review prompts.
+
+## v0.2 - 2026-05-26
+
+- Added the first substantial DPFTS skill-pack structure.
+- Added core guides for identity, Luau style, and anti-AI design.
+- Added deep guides for RemoteEvents, DataStores, and UI.
+- Added initial recipes for shops and leaderboards.
+
+## v0.1 - Local Draft
+
+- Defined the original DPFTS idea, tone, file structure, and MIT licensing direction.

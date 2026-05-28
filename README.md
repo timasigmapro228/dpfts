@@ -1,208 +1,155 @@
-# DPFTS
+# DPFTS Roblox AI Skills
 
-**Developer's Plugin For Total Savings**: a practical AI skill pack for Roblox developers.
+![DPFTS Roblox AI Skills banner](assets/banner.png)
 
-DPFTS is a Markdown-based instruction pack for AI coding assistants. It helps them produce safer, cleaner, more Roblox-aware Luau code and design advice.
+**DPFTS publicly stands for Developer's Plugin For Total Savings.** It is an AI skill pack that teaches coding assistants to write safe, practical, production-ready Roblox and Luau code.
 
-This is not an official Roblox product. This is not a normal Roblox Studio plugin yet. It is a GitHub skill pack made of instruction files.
+DPFTS is built for Roblox developers who use AI tools but do not want client-trusting RemoteEvents, broken DataStores, messy UI, giant scripts, or generic simulator sludge.
 
-DPFTS publicly stands for Developer's Plugin For Total Savings. Internally, it also means Don't Pay For This Shit.
+Install this skill: github.com/timasigmapro228/dpfts-roblox
 
-## Who It Is For
+## Why This Exists
 
-- Beginners who need working Roblox systems without insecure shortcuts.
-- Intermediate developers who want cleaner Luau and better architecture.
-- Solo creators who need practical MVP systems.
-- Small teams that want consistent AI-generated Roblox code and design reviews.
+AI assistants can write Roblox code that looks confident and still ships bad architecture:
 
-## Why It Exists
+- The client tells the server it has `99999` coins.
+- A LocalScript grants rewards or badges.
+- DataStores save without `pcall`, validation, or defaults.
+- Shop UI says "Purchased" before the server confirms anything.
+- A map is huge, empty, and impossible to read on mobile.
 
-AI assistants often generate Roblox code that looks confident but breaks in real games:
+DPFTS gives the assistant stronger Roblox instincts: server authority, clean Luau, clear Studio placement, mobile-first UI, safer monetization, practical testing, and anti-AI-slop design review.
 
-- LocalScripts secretly controlling currency or rewards.
-- RemoteEvents that trust whatever the client sends.
-- DataStores without validation or `pcall`.
-- Giant scripts that nobody wants to maintain.
-- UI with ten random buttons fighting for attention.
-- Maps that look large but play empty.
+## Quick Start
 
-DPFTS gives the assistant a Roblox-specific spine: server authority, clear placement, clean Luau, practical UI, readable maps, and no fake complexity.
+### 1. Install
 
-## Installation
+For Codex-style local skills on Windows:
 
-Install this skill: github.com/timasigmapro228/dpfts
-
-## What DPFTS Helps With
-
-- Luau code quality.
-- Roblox architecture.
-- RemoteEvent and RemoteFunction security.
-- Server-authoritative security reviews.
-- DataStore safety.
-- MarketplaceService purchases, gamepasses, and developer products.
-- UI/UX clarity.
-- Mobile-first button and screen design.
-- Place, map, hub, thumbnail, and icon design.
-- Source-informed creator patterns for retention, FTUE, social readability, and live updates.
-- Testing workflows for remotes, DataStores, mobile UI, and first-session design.
-- Performance, project structure, and live-ops guidance for production-minded projects.
-- Economy, social systems, and abuse-prevention guidance for player-facing Roblox systems.
-- Debugging, observability, and release-readiness guidance for real Roblox testing.
-- Avoiding bad AI-generated game design.
-- Recipes for common systems like shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hubs, tutorials, trading, round systems, redeem codes, pets, parties, teleports, badges, bug reports, and release checklists.
-
-## Repository Structure
-
-```text
-dpfts/
-|-- README.md
-|-- SKILL.md
-|-- core/
-|   |-- identity.md
-|   |-- luau-style.md
-|   |-- anti-ai-design.md
-|   `-- design.md
-|-- deep/
-|   |-- remote-events.md
-|   |-- datastore.md
-|   |-- security.md
-|   |-- marketplace.md
-|   |-- creator-patterns.md
-|   |-- testing.md
-|   |-- mobile-ui.md
-|   |-- performance.md
-|   |-- project-structure.md
-|   |-- live-ops.md
-|   |-- economy.md
-|   |-- social-systems.md
-|   |-- abuse-prevention.md
-|   |-- debugging.md
-|   |-- observability.md
-|   |-- release-readiness.md
-|   `-- ui.md
-`-- recipes/
-    |-- shop.md
-    |-- inventory.md
-    |-- daily-rewards.md
-    |-- quests.md
-    |-- admin-commands.md
-    |-- save-slots.md
-    |-- hub-layout.md
-    |-- tutorial.md
-    |-- trading.md
-    |-- round-system.md
-    |-- codes.md
-    |-- pets.md
-    |-- party-system.md
-    |-- teleports.md
-    |-- badges.md
-    |-- bug-report-template.md
-    |-- release-checklist.md
-    `-- leaderboard.md
+```powershell
+git clone https://github.com/timasigmapro228/dpfts-roblox.git "$env:USERPROFILE\.codex\skills\dpfts"
 ```
 
-- `SKILL.md`: main AI-facing behavior guide.
-- `core/identity.md`: DPFTS personality, response modes, and refusal rules.
-- `core/luau-style.md`: Luau coding standards for Roblox systems.
-- `core/anti-ai-design.md`: rules for avoiding generic AI-generated Roblox game design.
-- `core/design.md`: practical Roblox design guide for buttons, UI, maps, hubs, thumbnails, and visual clarity.
-- `deep/remote-events.md`: practical security guide for RemoteEvents and RemoteFunctions.
-- `deep/datastore.md`: practical DataStore loading, validation, saving, and failure handling.
-- `deep/security.md`: server authority, validation, permissions, rate limits, and exploit review.
-- `deep/marketplace.md`: safe MarketplaceService patterns for gamepasses and developer products.
-- `deep/creator-patterns.md`: source-informed Roblox creator patterns for retention, FTUE, social play, updates, and analytics.
-- `deep/testing.md`: practical test passes for remotes, DataStores, UI, first sessions, and analytics.
-- `deep/mobile-ui.md`: mobile-first UI placement, tap targets, HUDs, shops, and tutorial prompts.
-- `deep/performance.md`: practical performance rules for server heartbeat, client FPS, remotes, memory, maps, and UI.
-- `deep/project-structure.md`: Roblox folder structure, services, configs, remotes, and client/server ownership.
-- `deep/live-ops.md`: updates, events, retention hooks, analytics, rollback thinking, and player communication.
-- `deep/economy.md`: currencies, sources, sinks, pricing, progression pacing, and monetization boundaries.
-- `deep/social-systems.md`: parties, invites, co-op loops, trading boundaries, social readability, and spam risk.
-- `deep/abuse-prevention.md`: anti-spam, admin misuse prevention, text safety, economy abuse, and social abuse checks.
-- `deep/debugging.md`: Roblox bug triage, reproduction, script placement checks, remote debugging, and failure isolation.
-- `deep/observability.md`: useful logs, analytics events, release counters, and server-confirmed measurement.
-- `deep/release-readiness.md`: practical pre-release checks for security, data, mobile, first sessions, performance, and rollback.
-- `deep/ui.md`: Roblox UI rules for clear, mobile-friendly interfaces.
-- `recipes/shop.md`: ready-to-use server-authoritative shop recipe.
-- `recipes/inventory.md`: server-owned inventory and equip recipe.
-- `recipes/daily-rewards.md`: server-authoritative daily reward recipe.
-- `recipes/quests.md`: server-owned quest progress and reward recipe.
-- `recipes/admin-commands.md`: allowlisted server-side admin command recipe.
-- `recipes/save-slots.md`: simple validated DataStore save slot recipe.
-- `recipes/hub-layout.md`: practical hub layout recipe for spawn, landmarks, shops, and social areas.
-- `recipes/tutorial.md`: FTUE/tutorial recipe focused on first action, first reward, and drop-off points.
-- `recipes/trading.md`: safe server-authoritative player trading recipe.
-- `recipes/round-system.md`: lobby, intermission, match, and reward loop recipe.
-- `recipes/codes.md`: one-time redeem code recipe.
-- `recipes/pets.md`: server-owned pet ownership and equip recipe.
-- `recipes/party-system.md`: safe party invites, join/leave, and membership recipe.
-- `recipes/teleports.md`: validated zone and cross-place teleport recipe.
-- `recipes/badges.md`: BadgeService milestone award recipe.
-- `recipes/bug-report-template.md`: Roblox-specific bug report format for AI assistants and teammates.
-- `recipes/release-checklist.md`: practical launch checklist for small Roblox games and updates.
-- `recipes/leaderboard.md`: simple leaderstats leaderboard recipe.
+For macOS/Linux:
 
-## v0.6 Scope
+```bash
+git clone https://github.com/timasigmapro228/dpfts-roblox.git ~/.codex/skills/dpfts
+```
 
-DPFTS v0.6 focuses on practical, security-first Roblox development, source-informed Roblox design guidance, production system patterns, social/economy systems, and release readiness. It gives AI assistants clear rules and examples for common Roblox development work:
+If your AI tool does not support local skills, open `SKILL.md` and paste it into your custom instructions, then reference the deeper files when needed.
 
-- Secure client/server separation.
-- Practical Luau structure.
-- Safe RemoteEvent patterns.
-- Safe DataStore patterns.
-- Server-side exploit review and validation patterns.
-- MarketplaceService safety for gamepasses and developer products.
-- Creator patterns for retention, core loops, FTUE, social readability, analytics, and live updates.
-- Mobile UI testing and safer layout rules.
-- Performance and project-structure guidance.
-- Live ops guidance for updates, events, retention hooks, and rollback thinking.
-- Economy guidance for sources, sinks, pricing, inflation, and monetization boundaries.
-- Social-system guidance for parties, invites, co-op loops, social readability, and spam risk.
-- Abuse-prevention guidance for remotes, admin tools, economy abuse, user text, and social systems.
-- Debugging guidance for script placement, remotes, DataStores, UI, Studio-vs-live differences, and performance symptoms.
-- Observability guidance for useful logs, Roblox analytics events, rejection tracking, and release counters.
-- Release-readiness guidance for security, data safety, mobile usability, first-session playability, rollback, and launch decisions.
-- Clear UI and button guidance.
-- Useful place and map design advice.
-- Recipes for shops, leaderboards, inventory, daily rewards, quests, admin commands, save slots, hub layouts, tutorials, trading, round systems, redeem codes, pets, parties, teleports, badges, bug reports, and release checklists.
+### 2. Use The Skill
 
-It does not install scripts into Roblox Studio automatically. It does not replace testing in Studio. It does not make your game design good by magic. It gives the assistant better instincts.
+Ask your assistant for Roblox work with DPFTS enabled:
 
-## Example Prompts
+```text
+Use DPFTS to build a server-authoritative coin shop with clean Luau and testing steps.
+```
 
-After installing DPFTS, try prompts like:
+### 3. Check The Output
 
-- "Use DPFTS to build a server-authoritative coin shop with clean Luau and testing steps."
-- "Use DPFTS to review my RemoteEvent code for exploit risks."
-- "Use DPFTS to design a safe DataStore profile system for Coins, Level, Inventory, and Settings."
-- "Use DPFTS to improve this Roblox UI without adding button spam."
+A good DPFTS answer should include:
+
+- Roblox Studio placement.
+- Server/client separation.
+- Clean Luau code.
+- RemoteEvent validation.
+- DataStore safety when persistence is involved.
+- Testing steps and common failure cases.
+
+## Before And After
+
+### Without DPFTS
+
+```lua
+-- ServerScriptService/BadShop.server.lua
+BuyItem.OnServerEvent:Connect(function(player, itemId, price)
+    player.leaderstats.Coins.Value -= price
+    giveItem(player, itemId)
+end)
+```
+
+Problem: the client can send any `itemId` and any `price`, including `-99999`.
+
+### With DPFTS
+
+```lua
+-- ServerScriptService/ShopService.server.lua
+BuyItem.OnServerEvent:Connect(function(player, itemId)
+    if typeof(itemId) ~= "string" then
+        return
+    end
+
+    local item = ShopConfig.Items[itemId]
+    if not item then
+        return
+    end
+
+    local profile = Profiles[player]
+    if not profile or profile.Coins < item.Price then
+        return
+    end
+
+    if profile.Inventory[itemId] then
+        return
+    end
+
+    profile.Coins -= item.Price
+    profile.Inventory[itemId] = true
+    BuyResult:FireClient(player, true, itemId, profile.Coins)
+end)
+```
+
+Better: the client requests an action, the server owns price, currency, inventory, validation, and the final result.
+
+More examples: [examples/BEFORE_AFTER.md](examples/BEFORE_AFTER.md)
+
+## What It Helps With
+
+- **Security:** RemoteEvents, permissions, exploit review, admin tools, purchases, and server authority.
+- **Code quality:** Luau style, ModuleScripts, project structure, testing, debugging, and release checks.
+- **Persistence:** DataStores, save slots, schema validation, autosave, failure handling, and `BindToClose`.
+- **Game systems:** shops, inventory, quests, daily rewards, leaderboards, trading, rounds, pets, parties, teleports, badges, and codes.
+- **Design:** mobile UI, buttons, hubs, maps, thumbnails, first 30 seconds, tutorials, and anti-AI-slop reviews.
+- **Production:** performance, live ops, observability, analytics, rollback thinking, changelogs, and launch checklists.
+
+## Strong Example Prompts
+
+- "Use DPFTS to review this RemoteEvent system like an exploiter would."
+- "Use DPFTS to build a server-authoritative shop that cannot trust client prices."
+- "Use DPFTS to design a DataStore profile for Coins, Level, Inventory, and Settings."
 - "Use DPFTS to review my Roblox place layout and tell me what feels like AI slop."
 - "Use DPFTS to design mobile-friendly Roblox buttons for my shop UI."
-- "Use DPFTS to make this leaderboard simple now and DataStore-ready later."
-- "Use DPFTS to review this RemoteEvent system like an exploiter would."
-- "Use DPFTS to add a safe gamepass perk without trusting the client."
-- "Use DPFTS to build a simple server-owned inventory with equip requests."
-- "Use DPFTS to build a daily reward that cannot be spammed."
-- "Use DPFTS to design a first-time tutorial that gets to the first reward quickly."
-- "Use DPFTS to review my hub like a top Roblox creator would."
-- "Use DPFTS to build a quest system that teaches the core loop."
-- "Use DPFTS to add safe admin commands without exploit-friendly remotes."
-- "Use DPFTS to design mobile UI that avoids thumbstick and jump-button zones."
-- "Use DPFTS to review my Roblox game for performance risks before I add more content."
-- "Use DPFTS to structure my Roblox project so server, client, remotes, and config are clean."
-- "Use DPFTS to design a safe player trading system without dupes."
-- "Use DPFTS to build a round-based minigame loop with server-owned rewards."
-- "Use DPFTS to add redeem codes that cannot be claimed twice."
-- "Use DPFTS to review my Roblox economy for inflation, bad sinks, and pay-to-win risk."
-- "Use DPFTS to build a server-owned pet equip system."
-- "Use DPFTS to build a party system with invite cooldowns and server-owned membership."
-- "Use DPFTS to add safe teleports between zones or places."
-- "Use DPFTS to award badges from server-confirmed milestones."
-- "Use DPFTS to debug why my Roblox shop works in Play Solo but fails with two clients."
-- "Use DPFTS to add useful server logs and analytics for my tutorial funnel."
+- "Use DPFTS to debug why my shop works in Play Solo but fails with two clients."
 - "Use DPFTS to review whether this Roblox update is ready to publish."
-- "Use DPFTS to turn this messy bug report into something a developer can actually fix."
+- "Use DPFTS to create a security audit checklist before I release trading."
+
+More prompts: [examples/PROMPTS.md](examples/PROMPTS.md)
+
+## Repository Map
+
+The short version:
+
+- `SKILL.md`: main AI-facing instruction file.
+- `core/`: identity, Luau style, and design rules.
+- `deep/`: focused guides for security, DataStores, remotes, UI, performance, economy, debugging, release readiness, and more.
+- `recipes/`: ready-to-use patterns for common Roblox systems.
+- `examples/`: prompt examples and before/after examples.
+
+Full file map: [STRUCTURE.md](STRUCTURE.md)
+
+## v1.0 Status
+
+DPFTS v1.0 is the first stable, releasable version of the skill pack. It is ready to use as a practical Roblox AI guidance pack, with MIT licensing, release notes, contribution guidance, issue templates, examples, and a cleaner GitHub landing page.
+
+It is not an official Roblox product. It does not install scripts into Roblox Studio automatically. It does not replace testing in Studio. It gives your AI assistant better Roblox judgment.
+
+## Contributing
+
+Recipes, corrections, and better Roblox patterns are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-MIT. See `LICENSE`.
+MIT. See [LICENSE](LICENSE).
+
+If DPFTS saves you time or stops your AI assistant from shipping exploit-friendly Roblox code, star the repo.

@@ -1,6 +1,6 @@
 ---
 name: dpfts
-description: Use when building, reviewing, refactoring, debugging, testing, releasing, or designing Roblox and Luau systems, especially when security, RemoteEvents, DataStores, MarketplaceService, economy, social systems, abuse prevention, observability, release readiness, UI, mobile design, performance, project structure, live ops, quests, admin commands, save slots, trading, rounds, redeem codes, pets, parties, teleports, badges, bug reports, launch checklists, hubs, tutorials, thumbnails, retention, FTUE, or anti-AI-slop guidance matters.
+description: Use when building, reviewing, refactoring, debugging, testing, releasing, auditing, or designing Roblox and Luau systems, especially when architecture, security, RemoteEvents, DataStores, MarketplaceService, economy, social systems, abuse prevention, observability, release readiness, UI, mobile design, performance, project structure, live ops, quests, admin commands, save slots, trading, rounds, redeem codes, pets, parties, teleports, badges, bug reports, launch checklists, hubs, tutorials, thumbnails, retention, FTUE, or anti-AI-slop guidance matters.
 ---
 
 # DPFTS
@@ -20,6 +20,7 @@ When this skill is active, act like an experienced Roblox developer who wants th
 - Avoid overengineering. For MVPs, make reasonable assumptions and state them briefly.
 - Ask for missing context only when absolutely necessary.
 - Structure answers clearly enough that a Roblox developer can place the files in Studio.
+- For full systems, give folder structure, remotes, config, data model, code by file, testing steps, and security review.
 - Do not generate Roblox UI or maps without considering mobile readability, first 30 seconds, and visual hierarchy.
 - Do not copy top Roblox games blindly. Extract the principle: fast loop, clear goal, social readability, measurable retention, and honest presentation.
 
@@ -39,6 +40,7 @@ When this skill is active, act like an experienced Roblox developer who wants th
 - Analytics or funnel suggestions when the user asks about retention, onboarding, or "why players leave."
 - Debugging evidence, reproduction steps, and likely failure class when the user reports a bug.
 - Release-readiness checks when the user asks whether something is ready to publish.
+- Severity-ranked findings when the user asks for review or audit.
 
 ## Priority Order
 
@@ -56,6 +58,7 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - `core/luau-style.md`: Roblox Luau coding rules and examples.
 - `core/anti-ai-design.md`: rules for avoiding bad AI-generated Roblox game design.
 - `core/design.md`: practical Roblox design guide for buttons, UI, maps, hubs, thumbnails, icons, and visual clarity.
+- `deep/architecture.md`: full-system Roblox architecture decisions, ownership rules, services, configs, and output shape.
 - `deep/remote-events.md`: RemoteEvent and RemoteFunction security.
 - `deep/datastore.md`: DataStore safety and persistence patterns.
 - `deep/security.md`: server authority, validation, permissions, rate limits, and exploit review.
@@ -72,6 +75,7 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - `deep/debugging.md`: Roblox bug triage, reproduction, script placement checks, remote debugging, and failure isolation.
 - `deep/observability.md`: logs, analytics events, release counters, and server-confirmed measurement.
 - `deep/release-readiness.md`: pre-release checks for security, data, mobile, first sessions, performance, and rollback.
+- `deep/review-checklists.md`: reusable review passes for security, DataStores, UI, game design, economy, performance, and release readiness.
 - `deep/ui.md`: Roblox UI layout, hierarchy, and safe server connections.
 - `recipes/shop.md`: server-authoritative shop system recipe.
 - `recipes/inventory.md`: server-owned inventory and equip recipe.
@@ -90,6 +94,8 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - `recipes/badges.md`: server-confirmed BadgeService award recipe.
 - `recipes/bug-report-template.md`: Roblox-specific bug report format.
 - `recipes/release-checklist.md`: practical launch checklist for small Roblox games and updates.
+- `recipes/full-system-template.md`: complete-system prompt and output template.
+- `recipes/security-audit.md`: pre-release exploit and security audit recipe.
 - `recipes/leaderboard.md`: simple leaderstats recipe.
 
 ## When To Read Deeper Files
@@ -98,6 +104,7 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Read `core/luau-style.md` before writing or refactoring Luau.
 - Read `core/anti-ai-design.md` before giving Roblox game design feedback.
 - Read `core/design.md` before designing or reviewing UI buttons, maps, places, hubs, thumbnails, icons, or game feel.
+- Read `deep/architecture.md` before building complete systems, choosing service boundaries, organizing remotes/configs, or deciding server/client ownership.
 - Read `deep/remote-events.md` before creating or reviewing remotes.
 - Read `deep/datastore.md` before creating or reviewing persistence.
 - Read `deep/security.md` before reviewing exploit risks, permissions, admin tools, rate limits, or server authority.
@@ -114,8 +121,9 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Read `deep/debugging.md` before diagnosing bugs, Output errors, Studio-vs-live differences, broken remotes, DataStore failures, UI failures, or performance symptoms.
 - Read `deep/observability.md` before adding logs, analytics, counters, funnel events, release measurements, or debugging instrumentation.
 - Read `deep/release-readiness.md` before advising on publish readiness, launch checklists, QA passes, rollback plans, or "safe to ship" decisions.
+- Read `deep/review-checklists.md` before doing code review, security audit, release review, UI review, economy review, performance review, or anti-AI-slop review.
 - Read `deep/ui.md` before creating or reviewing Roblox UI.
-- Read recipes when the user asks for a shop, leaderboard, inventory, daily reward, quest, admin command, save slot, trading, round system, redeem code, pet, party, teleport, badge, bug report, release checklist, hub, tutorial, or common Roblox system.
+- Read recipes when the user asks for a shop, leaderboard, inventory, daily reward, quest, admin command, save slot, trading, round system, redeem code, pet, party, teleport, badge, bug report, release checklist, full system template, security audit, hub, tutorial, or common Roblox system.
 
 ## Never Do This
 
@@ -135,6 +143,7 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Never put DataStore work or expensive server logic in frame loops.
 - Never claim a Roblox system is ready to publish without checking security, data safety, mobile usability, first-session playability, and rollback risk.
 - Never debug by guessing when Output errors, script placement, reproduction steps, or server/client ownership are missing.
+- Never review Roblox code with vague feedback only. Name the exploit path, failure case, or test.
 - Never give exploit-friendly examples.
 
 ## Default Answer Shape
@@ -144,10 +153,12 @@ Use this shape for implementation answers:
 1. Assumptions.
 2. Roblox Studio placement.
 3. Server/client responsibilities.
-4. Code.
-5. Testing steps.
-6. Common failure cases.
-7. Extension notes, only if useful.
+4. Remotes, config, and data model when relevant.
+5. Code by file.
+6. Testing steps.
+7. Security review.
+8. Common failure cases.
+9. Extension notes, only if useful.
 
 Use this shape for design advice:
 
@@ -187,3 +198,12 @@ Use this shape for release-readiness reviews:
 - Tests to run:
 - Rollback plan:
 - Safe to ship?:
+
+Use this shape for code/security reviews:
+
+- Critical:
+- High:
+- Medium:
+- Low:
+- Tests to run:
+- Release verdict:
