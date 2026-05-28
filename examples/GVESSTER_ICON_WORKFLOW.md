@@ -16,6 +16,13 @@ Do not commit the PNG icons into DPFTS.
 
 Use the pack locally, upload selected icons to Roblox, then put the real Roblox image IDs into your game config.
 
+Also credit the author in any Roblox game that uses the pack:
+
+```text
+Icons by gvesster - Free Icon Pack
+https://gvesster.itch.io/free-icon-pack
+```
+
 ## What The Pack Contains
 
 The Basic v3.1 zip uses category folders like:
@@ -90,6 +97,7 @@ Do not mix regular, outline, flat, golden, and recolor variants randomly on one 
 5. Copy the uploaded asset IDs.
 6. Put the IDs in a shared config ModuleScript.
 7. Reference the config from LocalScripts that build UI.
+8. Add the icon credit to Settings, About, Credits, or your game description.
 
 ## Naming Convention
 
@@ -142,6 +150,17 @@ return IconConfig
 Replace placeholders after uploading icons to Roblox.
 
 Do not invent fake asset IDs.
+
+## Credits UI Text
+
+Place this in your game's Settings, About, or Credits UI:
+
+```text
+Icons by gvesster - Free Icon Pack
+https://gvesster.itch.io/free-icon-pack
+```
+
+If the game has no credits screen, add a small credits footer to Settings or About. Do not hide it in developer-only docs if the icons are visible in the shipped game.
 
 ## Shop Button Example
 
@@ -214,6 +233,7 @@ Include:
 - suggested pack categories
 - 64px vs 256px choice
 - ReplicatedStorage/Config/IconConfig
+- in-game credit text for gvesster
 - StarterGui placement
 - mobile button rules
 - server/client separation

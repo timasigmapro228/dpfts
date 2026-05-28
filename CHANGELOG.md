@@ -2,6 +2,14 @@
 
 DPFTS uses practical version notes, not corporate fog. Dates are UTC release dates when the version was published on GitHub.
 
+## v1.0.4 - 2026-05-28
+
+Credit policy patch.
+
+- Added a README credit for Gvesster Free Icon Pack by gvesster.
+- Updated DPFTS behavior so assistants must include in-game credit when a generated Roblox experience uses the Gvesster icon pack.
+- Added recommended credit text and placement guidance for Settings, About, Credits, game description, or release notes.
+
 ## v1.0.3 - 2026-05-28
 
 Icon workflow patch.

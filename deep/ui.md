@@ -115,6 +115,7 @@ Rules:
 - Use placeholder IDs like `rbxassetid://SHOP_ICON_ID`.
 - Do not use fake Roblox asset IDs.
 - Do not mix random icon styles.
+- Add in-game credit for gvesster when the game uses the pack.
 - Keep labels beside icons when the action is not obvious.
 - Make icon buttons large enough for mobile taps.
 

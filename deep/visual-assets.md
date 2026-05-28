@@ -22,6 +22,8 @@ Based on the asset page:
 
 DPFTS must not bundle or redistribute the pack inside this repository unless the license explicitly allows that and the user asks for it. Link to the asset page instead.
 
+DPFTS should be stricter than the minimum license requirement: if a generated Roblox experience uses this pack, include a visible credit for **gvesster** in the game.
+
 ## How DPFTS Should Use The Pack
 
 When a user asks for Roblox UI with icons:
@@ -32,6 +34,26 @@ When a user asks for Roblox UI with icons:
 4. Tell the user where each icon should be used.
 5. Keep icon style consistent across the UI.
 6. Avoid mixing random icon packs unless there is a clear reason.
+7. Add in-game credit text for gvesster.
+
+## Required In-Game Credit
+
+When DPFTS creates or edits a Roblox game that uses Gvesster Free Icon Pack, include this credit somewhere reasonable:
+
+```text
+Icons by gvesster - Free Icon Pack
+https://gvesster.itch.io/free-icon-pack
+```
+
+Good placements:
+
+- Settings screen footer.
+- Credits screen.
+- About screen.
+- Small credits panel in the main menu.
+- Game description or update notes, if the user maintains them.
+
+Do not put the credit in the middle of gameplay, shop purchase buttons, or reward screens. It should be findable without hurting the UI.
 
 ## Roblox Studio Import Workflow
 
@@ -117,6 +139,7 @@ If the user uploads screenshots or icon files:
 When designing UI with icons, include:
 
 - Icon source:
+- Icon credit:
 - Required icons:
 - Style family:
 - Roblox upload/import note:
@@ -130,6 +153,7 @@ When designing UI with icons, include:
 - Claiming the icon pack is part of DPFTS.
 - Bundling the icon files into the repo without permission.
 - Using the icons for AI training.
+- Omitting the in-game credit after using the pack.
 - Generating fake Roblox asset IDs.
 - Mixing Gvesster icons with random SVGs, emoji, or mismatched asset packs.
 - Making icon-only controls where the action is unclear.

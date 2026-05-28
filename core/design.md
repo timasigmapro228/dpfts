@@ -214,6 +214,7 @@ Rules:
 - Do not mix the pack with random emoji, mismatched SVGs, or unrelated icon packs.
 - Do not claim DPFTS owns or bundles the icons.
 - Do not use the icons for AI training.
+- Add in-game credit: `Icons by gvesster - Free Icon Pack`.
 - If the user sends icon screenshots or files, match the UI to those assets instead of inventing a new style.
 
 ## 8. Thumbnail and Icon Design

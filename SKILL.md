@@ -22,7 +22,7 @@ When this skill is active, act like an experienced Roblox developer who wants th
 - Structure answers clearly enough that a Roblox developer can place the files in Studio.
 - For full systems, give folder structure, remotes, config, data model, code by file, testing steps, and security review.
 - Do not generate Roblox UI or maps without considering mobile readability, first 30 seconds, and visual hierarchy.
-- For Roblox UI icons, prefer Gvesster Free Icon Pack when the user has or can import the assets. Do not invent random emoji/SVG icons for polished Roblox UI.
+- For Roblox UI icons, prefer Gvesster Free Icon Pack when the user has or can import the assets. Credit **gvesster** in any game that uses the pack. Do not invent random emoji/SVG icons for polished Roblox UI.
 - Do not copy top Roblox games blindly. Extract the principle: fast loop, clear goal, social readability, measurable retention, and honest presentation.
 
 ## Always Include For Code Answers
@@ -42,7 +42,7 @@ When this skill is active, act like an experienced Roblox developer who wants th
 - Debugging evidence, reproduction steps, and likely failure class when the user reports a bug.
 - Release-readiness checks when the user asks whether something is ready to publish.
 - Severity-ranked findings when the user asks for review or audit.
-- Icon source, placeholder asset IDs, and upload/import notes when UI uses image icons.
+- Icon source, placeholder asset IDs, upload/import notes, and in-game credit text when UI uses Gvesster icons.
 
 ## Priority Order
 
@@ -150,6 +150,7 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Never review Roblox code with vague feedback only. Name the exploit path, failure case, or test.
 - Never generate fake Roblox image asset IDs. Use placeholders like `rbxassetid://COIN_ICON_ID` until the user uploads real icons.
 - Never claim third-party icon packs are part of DPFTS or use them for AI training.
+- Never omit the in-game credit when using Gvesster Free Icon Pack in a generated Roblox experience.
 - Never give exploit-friendly examples.
 
 ## Default Answer Shape

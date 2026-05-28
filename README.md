@@ -202,6 +202,10 @@ It is not an official Roblox product. It does not install scripts into Roblox St
 
 Recipes, corrections, and better Roblox patterns are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Credits
+
+DPFTS recommends [Gvesster Free Icon Pack](https://gvesster.itch.io/free-icon-pack) as the preferred Roblox UI icon source when developers want a consistent icon style. The icon pack is by **gvesster**. Credit is optional on the asset page, but DPFTS intentionally credits the author and tells assistants to include an in-game credit whenever a generated Roblox experience uses those icons.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
