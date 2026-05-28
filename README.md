@@ -6,8 +6,6 @@
 
 DPFTS is built for Roblox developers who use AI tools but do not want client-trusting RemoteEvents, broken DataStores, messy UI, giant scripts, or generic simulator sludge.
 
-Install this skill: github.com/timasigmapro228/dpfts-roblox
-
 ## Why This Exists
 
 AI assistants can write Roblox code that looks confident and still ships bad architecture:
@@ -20,11 +18,41 @@ AI assistants can write Roblox code that looks confident and still ships bad arc
 
 DPFTS gives the assistant stronger Roblox instincts: server authority, clean Luau, clear Studio placement, mobile-first UI, safer monetization, practical testing, and anti-AI-slop design review.
 
-## Install: Pick Your Tool
+## Install
 
-DPFTS is just Markdown. That is the point: you can use it with Claude Code, Claude.ai Projects, Codex, Cursor, Windsurf, or almost any AI assistant that accepts custom instructions.
+DPFTS is just Markdown. That is the point: it can work with tools that support local skills, project knowledge, rules files, or custom instructions.
 
-### Claude Code
+### Tested Install: Codex
+
+This path has been tested for this repository.
+
+Install DPFTS as a local Codex skill.
+
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/timasigmapro228/dpfts-roblox.git "$env:USERPROFILE\.codex\skills\dpfts"
+```
+
+macOS/Linux:
+
+```bash
+git clone https://github.com/timasigmapro228/dpfts-roblox.git ~/.codex/skills/dpfts
+```
+
+Then restart Codex and ask:
+
+```text
+Use DPFTS to review this Roblox RemoteEvent for exploit risks.
+```
+
+### Other Tools: Help Verify
+
+The paths below are based on each tool's documented behavior or common rules-file workflows, but they have not all been personally tested end to end yet. If you try one, please open an issue with what worked or what failed.
+
+Use: [Install verification issue](.github/ISSUE_TEMPLATE/install_verification.md)
+
+#### Claude Code
 
 Install DPFTS as a Claude Code skill.
 
@@ -46,32 +74,16 @@ Then restart Claude Code and ask:
 Use DPFTS to review this Roblox RemoteEvent for exploit risks.
 ```
 
-### Claude.ai Web/Desktop Projects
+#### Claude.ai Web/Desktop Projects
 
-Claude.ai Projects do not use your local skill folder.
+Claude.ai Projects do not use your local skill folder. Use Project Knowledge instead.
 
 1. Create or open a Project.
 2. Add `SKILL.md` to Project Knowledge.
 3. Add the `core/`, `deep/`, and `recipes/` Markdown files if you want Claude to reference the full pack.
 4. Start prompts with `Use DPFTS...`.
 
-### Codex
-
-Install DPFTS as a local Codex skill.
-
-Windows PowerShell:
-
-```powershell
-git clone https://github.com/timasigmapro228/dpfts-roblox.git "$env:USERPROFILE\.codex\skills\dpfts"
-```
-
-macOS/Linux:
-
-```bash
-git clone https://github.com/timasigmapro228/dpfts-roblox.git ~/.codex/skills/dpfts
-```
-
-### Cursor, Windsurf, And Other AI IDEs
+#### Cursor, Windsurf, And Other AI IDEs
 
 These tools may not read `SKILL.md` automatically.
 
@@ -81,7 +93,7 @@ Use the universal route:
 2. Copy its contents into your project rules file, such as `.cursorrules`, `.windsurfrules`, or your IDE's custom instructions area.
 3. Keep the `core/`, `deep/`, and `recipes/` folders in the repo so the assistant can reference them when you paste or attach files.
 
-### Universal Fallback
+#### Universal Fallback
 
 If your assistant supports custom instructions, system prompts, project memory, or uploaded knowledge files:
 

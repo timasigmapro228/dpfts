@@ -2,6 +2,15 @@
 
 DPFTS uses practical version notes, not corporate fog. Dates are UTC release dates when the version was published on GitHub.
 
+## v1.0.6 - 2026-05-28
+
+Install trust patch.
+
+- Reworked README install section to separate `Tested Install: Codex` from other community-verification paths.
+- Marked Claude Code, Claude.ai Projects, Cursor, Windsurf, and universal fallback instructions as not fully personally tested end to end yet.
+- Removed the duplicate top-level install phrase.
+- Added an install verification issue template so users can report what worked or failed.
+
 ## v1.0.5 - 2026-05-28
 
 Safety patch from live skill testing.
