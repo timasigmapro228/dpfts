@@ -2,6 +2,14 @@
 
 DPFTS uses practical version notes, not corporate fog. Dates are UTC release dates when the version was published on GitHub.
 
+## v1.0.3 - 2026-05-28
+
+Icon workflow patch.
+
+- Added `examples/GVESSTER_ICON_WORKFLOW.md`.
+- Documented how to use the Gvesster Free Icon Pack locally without committing PNG assets into DPFTS.
+- Added Roblox upload naming conventions, 64px vs 256px guidance, category recommendations, `IconConfig.lua`, and a shop button example.
+
 ## v1.0.2 - 2026-05-28
 
 Design guidance patch.

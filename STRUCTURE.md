@@ -62,6 +62,7 @@ dpfts-roblox/
 |   `-- leaderboard.md
 |-- examples/
 |   |-- BEFORE_AFTER.md
+|   |-- GVESSTER_ICON_WORKFLOW.md
 |   `-- PROMPTS.md
 `-- .github/
     `-- ISSUE_TEMPLATE/

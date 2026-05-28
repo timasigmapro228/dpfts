@@ -43,6 +43,8 @@ Suggested workflow for users:
 4. Replace placeholder IDs in UI code with real `rbxassetid://...` image IDs.
 5. Keep a small icon map ModuleScript if many icons are used.
 
+For a complete example, read `examples/GVESSTER_ICON_WORKFLOW.md`.
+
 Example:
 
 ```lua

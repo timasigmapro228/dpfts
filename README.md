@@ -156,6 +156,8 @@ Better: the client requests an action, the server owns price, currency, inventor
 
 More examples: [examples/BEFORE_AFTER.md](examples/BEFORE_AFTER.md)
 
+Icon workflow: [examples/GVESSTER_ICON_WORKFLOW.md](examples/GVESSTER_ICON_WORKFLOW.md)
+
 ## What It Helps With
 
 - **Security:** RemoteEvents, permissions, exploit review, admin tools, purchases, and server authority.
