@@ -31,13 +31,13 @@ Install DPFTS as a local Codex skill.
 Windows PowerShell:
 
 ```powershell
-git clone https://github.com/timasigmapro228/dpfts-roblox.git "$env:USERPROFILE\.codex\skills\dpfts"
+git clone https://github.com/vo1dleaf/dpfts-roblox.git "$env:USERPROFILE\.codex\skills\dpfts"
 ```
 
 macOS/Linux:
 
 ```bash
-git clone https://github.com/timasigmapro228/dpfts-roblox.git ~/.codex/skills/dpfts
+git clone https://github.com/vo1dleaf/dpfts-roblox.git ~/.codex/skills/dpfts
 ```
 
 Then restart Codex and ask:
@@ -59,13 +59,13 @@ Install DPFTS as a Claude Code skill.
 Windows PowerShell:
 
 ```powershell
-git clone https://github.com/timasigmapro228/dpfts-roblox.git "$env:USERPROFILE\.claude\skills\dpfts"
+git clone https://github.com/vo1dleaf/dpfts-roblox.git "$env:USERPROFILE\.claude\skills\dpfts"
 ```
 
 macOS/Linux:
 
 ```bash
-git clone https://github.com/timasigmapro228/dpfts-roblox.git ~/.claude/skills/dpfts
+git clone https://github.com/vo1dleaf/dpfts-roblox.git ~/.claude/skills/dpfts
 ```
 
 Then restart Claude Code and ask:

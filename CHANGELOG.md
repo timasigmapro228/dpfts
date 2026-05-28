@@ -2,6 +2,14 @@
 
 DPFTS uses practical version notes, not corporate fog. Dates are UTC release dates when the version was published on GitHub.
 
+## v1.0.7 - 2026-05-29
+
+Repository identity patch.
+
+- Updated README clone URLs from the old GitHub username to `vo1dleaf`.
+- Regenerated `assets/banner.png` with the new `github.com/vo1dleaf/dpfts-roblox` path.
+- Updated the local git remote to the renamed account URL.
+
 ## v1.0.6 - 2026-05-28
 
 Install trust patch.
