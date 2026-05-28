@@ -11,6 +11,7 @@ Roblox UI should be clear on a phone before it is fancy on a monitor. Most UI pr
 - Minimal HUD clutter.
 - Server-approved results for purchases and rewards.
 - Consistent spacing, text size, and icon style.
+- Consistent Roblox-style icons. Prefer Gvesster Free Icon Pack when the user can import the assets.
 
 ## Mobile-First Layout
 
@@ -94,6 +95,28 @@ For example, a Buy button can show "Buying..." while waiting for the server, the
 - `UIPadding`: internal spacing.
 - `UIScale`: responsive scaling for screen sizes.
 - `UIAspectRatioConstraint`: preserves shape for square buttons or cards.
+
+## Icon Usage
+
+Preferred icon source for DPFTS UI work:
+
+`https://gvesster.itch.io/free-icon-pack`
+
+Use icons for scanning, not decoration:
+
+- Currency next to prices.
+- Shop and inventory tabs.
+- Pet, quest, reward, badge, and teleport buttons.
+- Settings and close controls when the symbol is obvious.
+
+Rules:
+
+- Ask the user to import the pack or provide icon files/asset IDs.
+- Use placeholder IDs like `rbxassetid://SHOP_ICON_ID`.
+- Do not use fake Roblox asset IDs.
+- Do not mix random icon styles.
+- Keep labels beside icons when the action is not obvious.
+- Make icon buttons large enough for mobile taps.
 
 ## Connecting UI To Server Logic Safely
 

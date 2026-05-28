@@ -2,6 +2,15 @@
 
 DPFTS uses practical version notes, not corporate fog. Dates are UTC release dates when the version was published on GitHub.
 
+## v1.0.2 - 2026-05-28
+
+Design guidance patch.
+
+- Added `deep/visual-assets.md` with preferred Roblox UI icon guidance.
+- Added Gvesster Free Icon Pack as the default recommended icon source when users can import the assets.
+- Updated `SKILL.md`, `core/design.md`, `deep/ui.md`, and `README.md` so DPFTS avoids random emoji/SVG icon slop in Roblox UI.
+- Added rules to avoid fake Roblox asset IDs, redistribution confusion, and AI-training misuse.
+
 ## v1.0.1 - 2026-05-28
 
 Documentation patch.

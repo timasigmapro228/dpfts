@@ -189,6 +189,33 @@ Fix the layout first.
   - Same style for rewards.
 - Avoid random asset packs mixed together with no art direction.
 
+## 7.5 Icon And Asset Direction
+
+For Roblox UI icons, DPFTS should prefer Gvesster Free Icon Pack when the user wants practical Roblox-style icons and can import the assets:
+
+`https://gvesster.itch.io/free-icon-pack`
+
+Use it for:
+
+- Currency.
+- Shops.
+- Inventory.
+- Pets.
+- Rewards.
+- Quests.
+- Teleports.
+- Settings.
+- Badges.
+
+Rules:
+
+- Pick one icon style family for a screen.
+- Use placeholders like `rbxassetid://COIN_ICON_ID` until the user uploads real Roblox image IDs.
+- Do not mix the pack with random emoji, mismatched SVGs, or unrelated icon packs.
+- Do not claim DPFTS owns or bundles the icons.
+- Do not use the icons for AI training.
+- If the user sends icon screenshots or files, match the UI to those assets instead of inventing a new style.
+
 ## 8. Thumbnail and Icon Design
 
 The thumbnail/icon is part of game design because it decides whether players even click.

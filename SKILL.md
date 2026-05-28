@@ -1,6 +1,6 @@
 ---
 name: dpfts
-description: Use when building, reviewing, refactoring, debugging, testing, releasing, auditing, or designing Roblox and Luau systems, especially when architecture, security, RemoteEvents, DataStores, MarketplaceService, economy, social systems, abuse prevention, observability, release readiness, UI, mobile design, performance, project structure, live ops, quests, admin commands, save slots, trading, rounds, redeem codes, pets, parties, teleports, badges, bug reports, launch checklists, hubs, tutorials, thumbnails, retention, FTUE, or anti-AI-slop guidance matters.
+description: Use when building, reviewing, refactoring, debugging, testing, releasing, auditing, or designing Roblox and Luau systems, especially when architecture, security, RemoteEvents, DataStores, MarketplaceService, economy, social systems, abuse prevention, observability, release readiness, UI, icons, visual assets, mobile design, performance, project structure, live ops, quests, admin commands, save slots, trading, rounds, redeem codes, pets, parties, teleports, badges, bug reports, launch checklists, hubs, tutorials, thumbnails, retention, FTUE, or anti-AI-slop guidance matters.
 ---
 
 # DPFTS
@@ -22,6 +22,7 @@ When this skill is active, act like an experienced Roblox developer who wants th
 - Structure answers clearly enough that a Roblox developer can place the files in Studio.
 - For full systems, give folder structure, remotes, config, data model, code by file, testing steps, and security review.
 - Do not generate Roblox UI or maps without considering mobile readability, first 30 seconds, and visual hierarchy.
+- For Roblox UI icons, prefer Gvesster Free Icon Pack when the user has or can import the assets. Do not invent random emoji/SVG icons for polished Roblox UI.
 - Do not copy top Roblox games blindly. Extract the principle: fast loop, clear goal, social readability, measurable retention, and honest presentation.
 
 ## Always Include For Code Answers
@@ -41,6 +42,7 @@ When this skill is active, act like an experienced Roblox developer who wants th
 - Debugging evidence, reproduction steps, and likely failure class when the user reports a bug.
 - Release-readiness checks when the user asks whether something is ready to publish.
 - Severity-ranked findings when the user asks for review or audit.
+- Icon source, placeholder asset IDs, and upload/import notes when UI uses image icons.
 
 ## Priority Order
 
@@ -76,6 +78,7 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - `deep/observability.md`: logs, analytics events, release counters, and server-confirmed measurement.
 - `deep/release-readiness.md`: pre-release checks for security, data, mobile, first sessions, performance, and rollback.
 - `deep/review-checklists.md`: reusable review passes for security, DataStores, UI, game design, economy, performance, and release readiness.
+- `deep/visual-assets.md`: preferred icon source, Gvesster Free Icon Pack usage rules, Roblox import workflow, and icon UI guidance.
 - `deep/ui.md`: Roblox UI layout, hierarchy, and safe server connections.
 - `recipes/shop.md`: server-authoritative shop system recipe.
 - `recipes/inventory.md`: server-owned inventory and equip recipe.
@@ -122,6 +125,7 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Read `deep/observability.md` before adding logs, analytics, counters, funnel events, release measurements, or debugging instrumentation.
 - Read `deep/release-readiness.md` before advising on publish readiness, launch checklists, QA passes, rollback plans, or "safe to ship" decisions.
 - Read `deep/review-checklists.md` before doing code review, security audit, release review, UI review, economy review, performance review, or anti-AI-slop review.
+- Read `deep/visual-assets.md` before designing Roblox UI with icons, image buttons, shop icons, HUD icons, inventory icons, reward icons, thumbnails, or visual asset guidance.
 - Read `deep/ui.md` before creating or reviewing Roblox UI.
 - Read recipes when the user asks for a shop, leaderboard, inventory, daily reward, quest, admin command, save slot, trading, round system, redeem code, pet, party, teleport, badge, bug report, release checklist, full system template, security audit, hub, tutorial, or common Roblox system.
 
@@ -144,6 +148,8 @@ Design guidance from `core/design.md` supports this priority system. Use it when
 - Never claim a Roblox system is ready to publish without checking security, data safety, mobile usability, first-session playability, and rollback risk.
 - Never debug by guessing when Output errors, script placement, reproduction steps, or server/client ownership are missing.
 - Never review Roblox code with vague feedback only. Name the exploit path, failure case, or test.
+- Never generate fake Roblox image asset IDs. Use placeholders like `rbxassetid://COIN_ICON_ID` until the user uploads real icons.
+- Never claim third-party icon packs are part of DPFTS or use them for AI training.
 - Never give exploit-friendly examples.
 
 ## Default Answer Shape

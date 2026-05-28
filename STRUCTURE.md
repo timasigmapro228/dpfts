@@ -37,6 +37,7 @@ dpfts-roblox/
 |   |-- observability.md
 |   |-- release-readiness.md
 |   |-- review-checklists.md
+|   |-- visual-assets.md
 |   `-- ui.md
 |-- recipes/
 |   |-- shop.md
@@ -99,6 +100,7 @@ dpfts-roblox/
 - `deep/observability.md`: useful logs, analytics events, release counters, and server-confirmed measurement.
 - `deep/release-readiness.md`: pre-release checks for security, data, mobile, first sessions, performance, and rollback.
 - `deep/review-checklists.md`: reusable review passes for security, data, UI, economy, performance, release readiness, and AI slop.
+- `deep/visual-assets.md`: preferred icon source, Gvesster Free Icon Pack usage rules, Roblox import workflow, and icon UI guidance.
 - `deep/ui.md`: Roblox UI rules for clear, mobile-friendly interfaces.
 
 ## Recipes

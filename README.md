@@ -162,7 +162,7 @@ More examples: [examples/BEFORE_AFTER.md](examples/BEFORE_AFTER.md)
 - **Code quality:** Luau style, ModuleScripts, project structure, testing, debugging, and release checks.
 - **Persistence:** DataStores, save slots, schema validation, autosave, failure handling, and `BindToClose`.
 - **Game systems:** shops, inventory, quests, daily rewards, leaderboards, trading, rounds, pets, parties, teleports, badges, and codes.
-- **Design:** mobile UI, buttons, hubs, maps, thumbnails, first 30 seconds, tutorials, and anti-AI-slop reviews.
+- **Design:** mobile UI, buttons, Gvesster Free Icon Pack guidance, hubs, maps, thumbnails, first 30 seconds, tutorials, and anti-AI-slop reviews.
 - **Production:** performance, live ops, observability, analytics, rollback thinking, changelogs, and launch checklists.
 
 ## Strong Example Prompts
