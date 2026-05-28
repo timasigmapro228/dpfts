@@ -7,7 +7,8 @@ This recipe builds a simple server-authoritative coin shop.
 - Shows a shop button in UI.
 - Client requests to buy an item.
 - Server validates the item, price, currency, ownership, and cooldown.
-- Server subtracts coins and records ownership.
+- Server validates item availability before changing currency.
+- Server subtracts coins, records ownership, and rolls back if granting fails.
 - Server sends a result back to the client.
 
 This starter recipe uses `leaderstats.Coins` for currency and in-memory ownership. Connect it to a DataStore later for permanent inventory.
@@ -39,6 +40,13 @@ The client only sends `itemId`. The server owns:
 - Ownership check.
 - Purchase cooldown.
 - Item granting.
+
+Mutation rule:
+
+- Validate everything first.
+- Change currency and ownership together.
+- If item granting can fail, roll back the currency and ownership changes.
+- Do not clone/grant the item before the purchase state is ready.
 
 ## ReplicatedStorage/ShopConfig
 
@@ -112,6 +120,18 @@ local function isRateLimited(player: Player): boolean
     return false
 end
 
+local function canGrantItem(itemId: string): boolean
+    -- For real Tool shops, check ServerStorage here before mutating currency.
+    -- This starter recipe keeps grants abstract, so every configured item is grantable.
+    return ShopConfig.Items[itemId] ~= nil
+end
+
+local function grantItem(player: Player, itemId: string): boolean
+    -- Grant the item here. For tools, clone from ServerStorage after validation.
+    -- Return false if cloning or ownership mutation fails.
+    return canGrantItem(itemId)
+end
+
 local function buy(player: Player, itemId: unknown): (boolean, string)
     if isRateLimited(player) then
         return false, "Slow down"
@@ -145,10 +165,19 @@ local function buy(player: Player, itemId: unknown): (boolean, string)
         return false, "Not enough coins"
     end
 
+    if not canGrantItem(itemId) then
+        return false, "Item unavailable"
+    end
+
     coins.Value -= item.Price
     owned[itemId] = true
 
-    -- Grant the item here. For tools, clone from ServerStorage after validation.
+    if not grantItem(player, itemId) then
+        coins.Value += item.Price
+        owned[itemId] = nil
+        return false, "Purchase failed"
+    end
+
     return true, "Purchased " .. item.DisplayName
 end
 
@@ -213,10 +242,12 @@ end)
 - Add `leaderstats.Coins` to the player or use the leaderboard recipe.
 - Give yourself at least 100 coins.
 - Click Buy and confirm coins decrease on the server.
+- Confirm the item can be granted before coins are spent.
 - Try buying with too few coins.
 - Try buying the same unique item twice.
 - Spam the Buy button and confirm cooldown response.
 - Test with two players and confirm purchases do not affect each other.
+- Temporarily make `grantItem` return `false` and confirm coins/ownership roll back.
 
 ## How To Extend
 
@@ -224,7 +255,7 @@ end)
 - Limited items: add stock counts on the server and validate before purchase.
 - Categories: add `Category` fields to `ShopConfig`.
 - Owned items: store ownership in a DataStore profile instead of in-memory tables.
-- Item granting: clone Tools from `ServerStorage` after validation.
+- Item granting: check the Tool exists in `ServerStorage` before mutation, then clone after currency/ownership is ready. Roll back if the grant fails.
 
 ## Mistakes To Avoid
 
@@ -235,3 +266,5 @@ end)
 - Server does not check ownership.
 - Server stores permanent ownership only in memory.
 - RemoteEvent has no cooldown.
+- Server grants the item before validating availability.
+- Server deducts currency without rollback when the grant fails.

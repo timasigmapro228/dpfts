@@ -143,6 +143,7 @@ Verify:
 - Party membership is server-owned.
 - Teleports validate destination and access.
 - Badge awards are tied to server-confirmed milestones.
+- Completed trades have trade IDs and before/after inventory snapshots for debugging disputes or dupes.
 
 ## Rollback Plan
 

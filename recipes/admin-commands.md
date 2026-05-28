@@ -134,6 +134,7 @@ end)
 ## Better Admin Practice
 
 - Use user IDs, not names, for admin allowlists.
+- Enforce the allowlist in Studio too. Studio is not a reason to let every test client run economy-changing commands.
 - Log every destructive or economy-changing action.
 - Use small command allowlists.
 - Add confirmations for destructive commands.

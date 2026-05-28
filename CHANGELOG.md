@@ -2,6 +2,15 @@
 
 DPFTS uses practical version notes, not corporate fog. Dates are UTC release dates when the version was published on GitHub.
 
+## v1.0.5 - 2026-05-28
+
+Safety patch from live skill testing.
+
+- Strengthened shop purchase guidance to validate availability before mutation and roll back currency/ownership if item granting fails.
+- Added a general security rule for validate-before-mutate and rollback-safe server transactions.
+- Tightened admin/dev guidance so allowlists still apply in Studio for economy-changing commands.
+- Added trade IDs and before/after inventory snapshot guidance for trading release checks and dispute debugging.
+
 ## v1.0.4 - 2026-05-28
 
 Credit policy patch.

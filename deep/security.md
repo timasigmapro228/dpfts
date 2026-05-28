@@ -85,6 +85,18 @@ BuyItem:FireServer("BasicSword")
 
 The client sends only intent. The server looks up the price, checks currency, checks ownership, subtracts coins, grants the item, and returns a result.
 
+For value-changing actions, validate before mutation:
+
+1. Validate request type and size.
+2. Validate config exists.
+3. Validate player data is loaded.
+4. Validate ownership, price, cooldown, distance, or permission.
+5. Validate the reward/item/tool can actually be granted.
+6. Mutate server state.
+7. If a later step fails, roll back earlier mutations or reject before mutating.
+
+Do not grant a Tool, badge, pet, reward, or trade result before the server has decided the transaction can finish safely.
+
 Bad remote:
 
 ```lua
@@ -180,6 +192,7 @@ Do not let the client say "I am close enough."
 Admin actions need explicit permission checks.
 
 - Store admin user IDs on the server.
+- Require the allowlist even in Studio unless the command is intentionally limited to a private local test file.
 - Never let the client choose permission level.
 - Log important admin actions.
 - Validate targets.

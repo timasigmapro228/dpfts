@@ -12,6 +12,7 @@ This recipe builds a simple safe trade flow. It does not include UI polish or Da
 - Both players confirm.
 - Server verifies ownership at the final moment.
 - Server swaps ownership.
+- Server records a trade ID and before/after inventory snapshots for debugging.
 
 ## Folder Structure
 
@@ -41,6 +42,7 @@ local tradeUpdated = remotes:WaitForChild("TradeUpdated")
 
 local inventoriesByPlayer: { [Player]: { [string]: boolean } } = {}
 local activeTradeByPlayer: { [Player]: any } = {}
+local nextTradeId = 0
 
 local function ownsItem(player: Player, itemId: string): boolean
     local inventory = inventoriesByPlayer[player]
@@ -50,6 +52,33 @@ end
 local function sendTradeUpdate(trade)
     tradeUpdated:FireClient(trade.PlayerA, trade)
     tradeUpdated:FireClient(trade.PlayerB, trade)
+end
+
+local function copyInventory(player: Player): { [string]: boolean }
+    local source = inventoriesByPlayer[player] or {}
+    local copy = {}
+
+    for itemId, owned in source do
+        if owned == true then
+            copy[itemId] = true
+        end
+    end
+
+    return copy
+end
+
+local function logTradeComplete(trade, beforeA, beforeB)
+    local afterA = copyInventory(trade.PlayerA)
+    local afterB = copyInventory(trade.PlayerB)
+
+    print("[TradingService] Trade complete", trade.Id, {
+        playerA = trade.PlayerA.UserId,
+        playerB = trade.PlayerB.UserId,
+        beforeA = beforeA,
+        beforeB = beforeB,
+        afterA = afterA,
+        afterB = afterB,
+    })
 end
 
 local function cancelTrade(player: Player)
@@ -76,7 +105,10 @@ local function startTrade(player: Player, targetName: unknown): (boolean, string
         return false, "Player already trading"
     end
 
+    nextTradeId += 1
+
     local trade = {
+        Id = nextTradeId,
         PlayerA = player,
         PlayerB = target,
         OfferA = nil,
@@ -132,6 +164,9 @@ local function finishTrade(trade): (boolean, string)
         return false, "Ownership changed"
     end
 
+    local beforeA = copyInventory(trade.PlayerA)
+    local beforeB = copyInventory(trade.PlayerB)
+
     inventoriesByPlayer[trade.PlayerA][itemA] = nil
     inventoriesByPlayer[trade.PlayerB][itemB] = nil
     inventoriesByPlayer[trade.PlayerA][itemB] = true
@@ -139,6 +174,8 @@ local function finishTrade(trade): (boolean, string)
 
     activeTradeByPlayer[trade.PlayerA] = nil
     activeTradeByPlayer[trade.PlayerB] = nil
+
+    logTradeComplete(trade, beforeA, beforeB)
 
     return true, "Trade complete"
 end
@@ -197,6 +234,8 @@ end)
 - Cancel trades when a player leaves.
 - Do not allow trading locked or equipped-only items unless explicitly supported.
 - Save both inventories carefully if using DataStores.
+- Give each trade a server-side trade ID.
+- Log before/after inventory snapshots for completed trades so disputes and dupe reports can be investigated.
 
 ## Mistakes To Avoid
 
@@ -206,3 +245,4 @@ end)
 - Item ownership is not rechecked at the final moment.
 - Player can trade with themselves.
 - Leaving during trade duplicates items.
+- Completed trades have no trade ID or audit log.
