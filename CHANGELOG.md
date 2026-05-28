@@ -2,6 +2,14 @@
 
 DPFTS uses practical version notes, not corporate fog. Dates are UTC release dates when the version was published on GitHub.
 
+## v1.0.1 - 2026-05-28
+
+Documentation patch.
+
+- Reworked installation instructions so users can pick their tool instead of seeing a Codex-only quick start.
+- Added dedicated install blocks for Claude Code, Claude.ai Projects, Codex, Cursor/Windsurf, and universal custom-instructions usage.
+- Put Claude Code first because `SKILL.md`-based local skills are a major audience for this repository.
+
 ## v1.0.0 - 2026-05-28
 
 First stable, releasable version.

@@ -20,25 +20,77 @@ AI assistants can write Roblox code that looks confident and still ships bad arc
 
 DPFTS gives the assistant stronger Roblox instincts: server authority, clean Luau, clear Studio placement, mobile-first UI, safer monetization, practical testing, and anti-AI-slop design review.
 
-## Quick Start
+## Install: Pick Your Tool
 
-### 1. Install
+DPFTS is just Markdown. That is the point: you can use it with Claude Code, Claude.ai Projects, Codex, Cursor, Windsurf, or almost any AI assistant that accepts custom instructions.
 
-For Codex-style local skills on Windows:
+### Claude Code
+
+Install DPFTS as a Claude Code skill.
+
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/timasigmapro228/dpfts-roblox.git "$env:USERPROFILE\.claude\skills\dpfts"
+```
+
+macOS/Linux:
+
+```bash
+git clone https://github.com/timasigmapro228/dpfts-roblox.git ~/.claude/skills/dpfts
+```
+
+Then restart Claude Code and ask:
+
+```text
+Use DPFTS to review this Roblox RemoteEvent for exploit risks.
+```
+
+### Claude.ai Web/Desktop Projects
+
+Claude.ai Projects do not use your local skill folder.
+
+1. Create or open a Project.
+2. Add `SKILL.md` to Project Knowledge.
+3. Add the `core/`, `deep/`, and `recipes/` Markdown files if you want Claude to reference the full pack.
+4. Start prompts with `Use DPFTS...`.
+
+### Codex
+
+Install DPFTS as a local Codex skill.
+
+Windows PowerShell:
 
 ```powershell
 git clone https://github.com/timasigmapro228/dpfts-roblox.git "$env:USERPROFILE\.codex\skills\dpfts"
 ```
 
-For macOS/Linux:
+macOS/Linux:
 
 ```bash
 git clone https://github.com/timasigmapro228/dpfts-roblox.git ~/.codex/skills/dpfts
 ```
 
-If your AI tool does not support local skills, open `SKILL.md` and paste it into your custom instructions, then reference the deeper files when needed.
+### Cursor, Windsurf, And Other AI IDEs
 
-### 2. Use The Skill
+These tools may not read `SKILL.md` automatically.
+
+Use the universal route:
+
+1. Open `SKILL.md`.
+2. Copy its contents into your project rules file, such as `.cursorrules`, `.windsurfrules`, or your IDE's custom instructions area.
+3. Keep the `core/`, `deep/`, and `recipes/` folders in the repo so the assistant can reference them when you paste or attach files.
+
+### Universal Fallback
+
+If your assistant supports custom instructions, system prompts, project memory, or uploaded knowledge files:
+
+1. Open `SKILL.md`.
+2. Paste it into the assistant's custom instructions or system prompt.
+3. Attach or paste deeper files only when relevant.
+4. Prompt with `Use DPFTS...`.
+
+## First Prompt
 
 Ask your assistant for Roblox work with DPFTS enabled:
 
@@ -46,7 +98,7 @@ Ask your assistant for Roblox work with DPFTS enabled:
 Use DPFTS to build a server-authoritative coin shop with clean Luau and testing steps.
 ```
 
-### 3. Check The Output
+## Check The Output
 
 A good DPFTS answer should include:
 
